@@ -1,0 +1,9 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<http://example.org/anna> a <http://dbpedia.org/ontology/Person> ;
+    foaf:friendship <http://example.org/Micheal> ;
+    foaf:name "Anna" .
+
+<http://example.org/Micheal> a <http://dbpedia.org/ontology/Person> ;
+    foaf:name "Micheal" .
+

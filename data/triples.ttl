@@ -1,0 +1,17 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbr: <https://dbpedia.org/resource/> .
+@prefix dbo: <https://dbpedia.org/ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dbr:Germany rdf:type dbo:Country .
+dbr:Germany rdfs:label "Deutschland"@de .
+
+dbr:Berlin rdf:type dbo:City .
+dbr:Berlin rdfs:label "Berlin"@de .
+dbr:Berlin dbo:populationTotal "3645000"^^xsd:nonNegativeInteger .
+
+dbr:Germany dbo:capital dbr:Berlin .
+dbr:Berlin dbo:country dbr:Germany .

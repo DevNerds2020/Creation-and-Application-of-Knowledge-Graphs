@@ -1,0 +1,66 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbr:  <https://dbpedia.org/resource/> .
+@prefix dbo:  <https://dbpedia.org/ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+dbr:Germany
+    rdf:type    dbo:Country ;
+    dbo:capital dbr:Berlin ;
+    rdfs:label  "Germany"@en .
+
+dbr:France
+    rdf:type    dbo:Country ;
+    dbo:capital dbr:Paris ;
+    rdfs:label  "France"@en .
+
+dbr:Berlin
+    rdf:type   dbo:City ;
+    rdfs:label "Berlin"@en .
+
+dbr:Paris
+    rdf:type   dbo:City ;
+    rdfs:label "Paris"@en .
+
+dbr:Brookline
+    rdf:type   dbo:City ;
+    rdfs:label "Brookline"@en .
+
+dbr:Dallas
+    rdf:type   dbo:City ;
+    rdfs:label "Dallas"@en .
+
+dbr:Konrad_Zuse
+    rdf:type       dbo:Person ;
+    dbo:birthPlace dbr:Berlin ;
+    rdfs:label     "Konrad Zuse"@en .
+
+dbr:Rosa_Luxemburg
+    rdf:type       dbo:Person ;
+    dbo:deathPlace dbr:Berlin ;
+    rdfs:label     "Rosa Luxemburg"@en .
+
+dbr:Marlene_Dietrich
+    rdf:type       dbo:Person ;
+    dbo:birthPlace dbr:Berlin ;
+    dbo:deathPlace dbr:Paris ;
+    rdfs:label     "Marlene Dietrich"@en .
+
+dbr:John_F._Kennedy
+    rdf:type       dbo:Person ;
+    dbo:birthPlace dbr:Brookline ;
+    dbo:deathPlace dbr:Dallas ;
+    dbo:partner    dbr:Jaqueline_Kennedy ;
+    dbo:partner    dbr:Marlene_Dietrich ;
+    rdfs:label     "John F. Kennedy"@en .
+
+dbr:Jaqueline_Kennedy
+    rdf:type       dbo:Person ;
+    rdfs:label     "Jaqueline Kennedy"@en .
+
+dbr:Oscar_Wilde
+    rdf:type       dbo:Person ;
+    dbo:deathPlace dbr:Paris ;
+    rdfs:label     "Oscar Wilde"@en .
