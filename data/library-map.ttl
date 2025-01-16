@@ -1,0 +1,87 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix ex: <http://example.com/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<#AuthorMap>
+    a rr:TriplesMap;
+    rml:logicalSource [
+       rml:source "authors.csv";
+       rml:referenceFormulation ql:CSV
+   ];
+
+   rr:subjectMap [
+       rr:template "http://example.com/authors/{author_id}";
+       rr:class ex:Person;
+       rr:class ex:Author
+   ];
+
+   rr:predicateObjectMap [
+       rr:predicate ex:name;
+       rr:objectMap [
+          rml:reference "author_name";
+          rml:datatype xsd:string
+       ]
+   ];
+
+   rr:predicateObjectMap [
+       rr:predicate ex:author_id;
+       rr:objectMap [
+          rml:reference "author_id";
+          rml:datatype xsd:string;
+       ]
+   ];
+.
+
+
+<#BooksMap>
+    a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "books.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+
+    rr:subjectMap [
+        rr:template "http://example.com/books/{book_id}";
+        rr:class ex:Book
+    ];
+
+    rr:predicateObjectMap [
+       rr:predicate ex:book_id;
+       rr:objectMap [
+          rml:reference "book_id";
+          rml:datatype xsd:string;
+       ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate ex:author;
+        rr:objectMap [
+            rml:reference "author";
+            rr:joinCondition [
+                rr:parentTriplesMap <#AuthorMap>;
+                rr:child "author";
+                rr:parent "author_id"
+            ];
+            rml:datatype xsd:string
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate ex:book_name;
+        rr:objectMap [
+            rml:reference "book_name";
+            rml:datatype xsd:string
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate ex:Status;
+        rr:objectMap [
+            rml:reference "status";
+            rml:datatype xsd:string
+        ]
+    ];
+.
