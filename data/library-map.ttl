@@ -8,7 +8,7 @@
 <#AuthorMap>
     a rr:TriplesMap;
     rml:logicalSource [
-       rml:source "authors.csv";
+       rml:source "./data/authors.csv";
        rml:referenceFormulation ql:CSV
    ];
 
@@ -39,7 +39,7 @@
 <#BooksMap>
     a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "books.csv";
+        rml:source "./data/books.csv";
         rml:referenceFormulation ql:CSV
     ];
 

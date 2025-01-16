@@ -1,0 +1,43 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix ex: <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<#UserMap>
+    a rr:TriplesMap;
+    rml:logicalSource [
+       rml:source "./data/users.csv";
+       rml:referenceFormulation ql:CSV
+   ];
+
+   rr:subjectMap [
+       rr:template "http://example.org/users/{user_id}";
+       rr:class ex:User
+   ];
+
+   rr:predicateObjectMap [
+       rr:predicate ex:userId;
+       rr:objectMap [
+          rml:reference "user_id";
+          rml:datatype xsd:string
+       ]
+   ];
+
+   rr:predicateObjectMap [
+       rr:predicate ex:email;
+       rr:objectMap [
+          rml:reference "email_id";
+          rml:datatype xsd:string
+       ]
+   ];
+
+   rr:predicateObjectMap [
+       rr:predicate ex:userType;
+       rr:objectMap [
+          rml:reference "user_type";
+          rml:datatype xsd:string
+       ]
+   ];
+.
